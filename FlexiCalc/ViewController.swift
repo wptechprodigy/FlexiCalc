@@ -61,7 +61,7 @@ class ViewController: UIViewController {
     }
 
     private func decorateButtons() {
-        decoratePinpadButton(pinpadButton0)
+        decoratePinpadButton(pinpadButton0, true)
         decoratePinpadButton(pinpadButton1)
         decoratePinpadButton(pinpadButton2)
         decoratePinpadButton(pinpadButton3)
@@ -85,8 +85,10 @@ class ViewController: UIViewController {
         decoratePinpadButton(decimalButton)
     }
 
-    private func decorateButton(_ button: UIButton) {
-        button.setBackgroundImage(UIImage(named: "Circle"), for: .normal)
+    private func decorateButton(_ button: UIButton,
+                                _ usingSlicedImage: Bool = false) {
+        let image = usingSlicedImage ? UIImage(named: "CircleSliced") : UIImage(named: "Circle")
+        button.setBackgroundImage(image, for: .normal)
         button.backgroundColor = .clear
     }
 
@@ -108,8 +110,9 @@ class ViewController: UIViewController {
         setFontSize(of: button, to: 45)
     }
 
-    private func decoratePinpadButton(_ button: UIButton) {
-        decorateButton(button)
+    private func decoratePinpadButton(_ button: UIButton,
+                                      _ usingSilcedImage: Bool = false) {
+        decorateButton(button, usingSilcedImage)
 
         button.tintColor = UIColor(hex: currentTheme.pinpadColor)
         button.setTitleColor(UIColor(hex: currentTheme.pinpadTitleColor),
