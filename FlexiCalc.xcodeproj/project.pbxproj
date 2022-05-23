@@ -16,6 +16,8 @@
 		04E056042839FC3600D9481F /* FlexiCalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E056032839FC3600D9481F /* FlexiCalcTests.swift */; };
 		04E0560E2839FC3600D9481F /* FlexiCalcUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E0560D2839FC3600D9481F /* FlexiCalcUITests.swift */; };
 		04E056102839FC3600D9481F /* FlexiCalcUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E0560F2839FC3600D9481F /* FlexiCalcUITestsLaunchTests.swift */; };
+		04E0561D283B814400D9481F /* CalculatorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E0561C283B814400D9481F /* CalculatorTheme.swift */; };
+		04E0561F283B828F00D9481F /* UIColor+HexValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E0561E283B828F00D9481F /* UIColor+HexValue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		04E056092839FC3600D9481F /* FlexiCalcUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlexiCalcUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E0560D2839FC3600D9481F /* FlexiCalcUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexiCalcUITests.swift; sourceTree = "<group>"; };
 		04E0560F2839FC3600D9481F /* FlexiCalcUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexiCalcUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		04E0561C283B814400D9481F /* CalculatorTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTheme.swift; sourceTree = "<group>"; };
+		04E0561E283B828F00D9481F /* UIColor+HexValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HexValue.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 				04E055EC2839FC3100D9481F /* AppDelegate.swift */,
 				04E055EE2839FC3100D9481F /* SceneDelegate.swift */,
 				04E055F02839FC3100D9481F /* ViewController.swift */,
+				04E0561C283B814400D9481F /* CalculatorTheme.swift */,
+				04E0561E283B828F00D9481F /* UIColor+HexValue.swift */,
 				04E055F22839FC3100D9481F /* Main.storyboard */,
 				04E055F52839FC3500D9481F /* Assets.xcassets */,
 				04E055F72839FC3500D9481F /* LaunchScreen.storyboard */,
@@ -258,7 +264,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04E0561F283B828F00D9481F /* UIColor+HexValue.swift in Sources */,
 				04E055F12839FC3100D9481F /* ViewController.swift in Sources */,
+				04E0561D283B814400D9481F /* CalculatorTheme.swift in Sources */,
 				04E055ED2839FC3100D9481F /* AppDelegate.swift in Sources */,
 				04E055EF2839FC3100D9481F /* SceneDelegate.swift in Sources */,
 			);

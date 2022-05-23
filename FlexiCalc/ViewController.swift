@@ -35,19 +35,26 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var decimalButton: UIButton!
 
+    var currentTheme: CalculatorTheme {
+        return CalculatorTheme(backgroundColor: "#000000",
+                               displayColor: "#FFFFFF",
+                               extraFunctionColor: "#000000",
+                               extraFunctionTitleColor: "#FFFFFF",
+                               operationColor: "#000000",
+                               operationTitleColor: "#FFFFFF",
+                               pinpadColor: "#000000",
+                               pinpadTitleColor: "#FFFFFF")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         decorateView()
     }
 
     private func decorateView() {
-
-        let backgroundColor: UIColor = .black
-        let displayColor: UIColor = .white
-
-        view.backgroundColor = backgroundColor
+        view.backgroundColor = UIColor(hex: currentTheme.backgroundColor)
         lcdDisplay.backgroundColor = .clear
-        displayLabel.textColor = displayColor  
+        displayLabel.textColor = UIColor(hex: currentTheme.displayColor)
 
         decorateButtons()
     }
@@ -79,37 +86,30 @@ class ViewController: UIViewController {
 
     private func decorateButton(_ button: UIButton) {
         button.setBackgroundImage(UIImage(named: "Circle"), for: .normal)
-        button.tintColor = .orange
         button.backgroundColor = .clear
     }
 
     private func decorateExtraFunctionButton(_ button: UIButton) {
         decorateButton(button)
 
-        let extraFunctionColor: UIColor = .lightGray
-        let extraFunctionTitleColor: UIColor = .white
-
-        button.tintColor = extraFunctionColor
-        button.setTitleColor(extraFunctionTitleColor, for: .normal)
+        button.tintColor = UIColor(hex: currentTheme.extraFunctionColor)
+        button.setTitleColor(UIColor(hex: currentTheme.extraFunctionTitleColor),
+                             for: .normal)
     }
 
     private func decorateOperationButton(_ button: UIButton) {
         decorateButton(button)
 
-        let operationColor: UIColor = .orange
-        let operationTitleColor: UIColor = .white
-
-        button.tintColor = operationColor
-        button.setTitleColor(operationTitleColor, for: .normal)
+        button.tintColor = UIColor(hex: currentTheme.operationColor)
+        button.setTitleColor(UIColor(hex: currentTheme.operationTitleColor),
+                             for: .normal)
     }
 
     private func decoratePinpadButton(_ button: UIButton) {
         decorateButton(button)
 
-        let pinpadColor: UIColor = .darkGray
-        let pinpadTitleColor: UIColor = .white
-
-        button.tintColor = pinpadColor
-        button.setTitleColor(pinpadTitleColor, for: .normal)
+        button.tintColor = UIColor(hex: currentTheme.pinpadColor)
+        button.setTitleColor(UIColor(hex: currentTheme.pinpadTitleColor),
+                             for: .normal)
     }
 }
