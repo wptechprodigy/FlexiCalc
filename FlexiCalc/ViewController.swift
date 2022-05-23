@@ -36,14 +36,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var decimalButton: UIButton!
 
     var currentTheme: CalculatorTheme {
-        return CalculatorTheme(backgroundColor: "#000000",
-                               displayColor: "#FFFFFF",
-                               extraFunctionColor: "#000000",
-                               extraFunctionTitleColor: "#FFFFFF",
-                               operationColor: "#000000",
-                               operationTitleColor: "#FFFFFF",
-                               pinpadColor: "#000000",
-                               pinpadTitleColor: "#FFFFFF")
+        return CalculatorTheme(
+            backgroundColor: "#000000",
+            displayColor: "#ffffff",
+            extraFunctionColor: "#a6a6a6",
+            extraFunctionTitleColor: "#ffffff",
+            operationColor: "#ff9f0a",
+            operationTitleColor: "#ffffff",
+            pinpadColor: "#333333",
+            pinpadTitleColor: "#ffffff")
     }
 
     override func viewDidLoad() {

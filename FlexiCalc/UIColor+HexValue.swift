@@ -31,6 +31,7 @@ extension UIColor {
                         green: greenComponent,
                         blue: blueComponent,
                         alpha: 1)
+                    return 
                 }
             }
         }
