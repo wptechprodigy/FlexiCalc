@@ -96,6 +96,7 @@ class ViewController: UIViewController {
         button.tintColor = UIColor(hex: currentTheme.extraFunctionColor)
         button.setTitleColor(UIColor(hex: currentTheme.extraFunctionTitleColor),
                              for: .normal)
+        setFontSize(of: button, to: 35)
     }
 
     private func decorateOperationButton(_ button: UIButton) {
@@ -104,6 +105,7 @@ class ViewController: UIViewController {
         button.tintColor = UIColor(hex: currentTheme.operationColor)
         button.setTitleColor(UIColor(hex: currentTheme.operationTitleColor),
                              for: .normal)
+        setFontSize(of: button, to: 45)
     }
 
     private func decoratePinpadButton(_ button: UIButton) {
@@ -112,5 +114,10 @@ class ViewController: UIViewController {
         button.tintColor = UIColor(hex: currentTheme.pinpadColor)
         button.setTitleColor(UIColor(hex: currentTheme.pinpadTitleColor),
                              for: .normal)
+        setFontSize(of: button, to: 30)
+    }
+
+    private func setFontSize(of button: UIButton, to size: CGFloat) {
+        button.titleLabel?.font = UIFont.systemFont(ofSize: size)
     }
 }
