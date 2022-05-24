@@ -111,8 +111,8 @@ class ViewController: UIViewController {
     }
 
     private func decoratePinpadButton(_ button: UIButton,
-                                      _ usingSilcedImage: Bool = false) {
-        decorateButton(button, usingSilcedImage)
+                                      _ usingSilcedImage: Bool = false) { 
+        decorateButton(button, usingSilcedImage )
 
         button.tintColor = UIColor(hex: currentTheme.pinpadColor)
         button.setTitleColor(UIColor(hex: currentTheme.pinpadTitleColor),

@@ -13,11 +13,12 @@
 		04E055F42839FC3100D9481F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E055F22839FC3100D9481F /* Main.storyboard */; };
 		04E055F62839FC3500D9481F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04E055F52839FC3500D9481F /* Assets.xcassets */; };
 		04E055F92839FC3500D9481F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E055F72839FC3500D9481F /* LaunchScreen.storyboard */; };
-		04E056042839FC3600D9481F /* FlexiCalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E056032839FC3600D9481F /* FlexiCalcTests.swift */; };
+		04E056042839FC3600D9481F /* MathEquationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E056032839FC3600D9481F /* MathEquationTests.swift */; };
 		04E0560E2839FC3600D9481F /* FlexiCalcUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E0560D2839FC3600D9481F /* FlexiCalcUITests.swift */; };
 		04E056102839FC3600D9481F /* FlexiCalcUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E0560F2839FC3600D9481F /* FlexiCalcUITestsLaunchTests.swift */; };
 		04E0561D283B814400D9481F /* CalculatorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E0561C283B814400D9481F /* CalculatorTheme.swift */; };
 		04E0561F283B828F00D9481F /* UIColor+HexValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E0561E283B828F00D9481F /* UIColor+HexValue.swift */; };
+		04E05621283CC69200D9481F /* MathEquation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E05620283CC69200D9481F /* MathEquation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,12 +48,13 @@
 		04E055F82839FC3500D9481F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04E055FA2839FC3500D9481F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04E055FF2839FC3500D9481F /* FlexiCalcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlexiCalcTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		04E056032839FC3600D9481F /* FlexiCalcTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexiCalcTests.swift; sourceTree = "<group>"; };
+		04E056032839FC3600D9481F /* MathEquationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathEquationTests.swift; sourceTree = "<group>"; };
 		04E056092839FC3600D9481F /* FlexiCalcUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlexiCalcUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E0560D2839FC3600D9481F /* FlexiCalcUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexiCalcUITests.swift; sourceTree = "<group>"; };
 		04E0560F2839FC3600D9481F /* FlexiCalcUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexiCalcUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		04E0561C283B814400D9481F /* CalculatorTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTheme.swift; sourceTree = "<group>"; };
 		04E0561E283B828F00D9481F /* UIColor+HexValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HexValue.swift"; sourceTree = "<group>"; };
+		04E05620283CC69200D9481F /* MathEquation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathEquation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				04E055F02839FC3100D9481F /* ViewController.swift */,
 				04E0561C283B814400D9481F /* CalculatorTheme.swift */,
 				04E0561E283B828F00D9481F /* UIColor+HexValue.swift */,
+				04E05620283CC69200D9481F /* MathEquation.swift */,
 				04E055F22839FC3100D9481F /* Main.storyboard */,
 				04E055F52839FC3500D9481F /* Assets.xcassets */,
 				04E055F72839FC3500D9481F /* LaunchScreen.storyboard */,
@@ -119,7 +122,7 @@
 		04E056022839FC3600D9481F /* FlexiCalcTests */ = {
 			isa = PBXGroup;
 			children = (
-				04E056032839FC3600D9481F /* FlexiCalcTests.swift */,
+				04E056032839FC3600D9481F /* MathEquationTests.swift */,
 			);
 			path = FlexiCalcTests;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04E0561F283B828F00D9481F /* UIColor+HexValue.swift in Sources */,
+				04E05621283CC69200D9481F /* MathEquation.swift in Sources */,
 				04E055F12839FC3100D9481F /* ViewController.swift in Sources */,
 				04E0561D283B814400D9481F /* CalculatorTheme.swift in Sources */,
 				04E055ED2839FC3100D9481F /* AppDelegate.swift in Sources */,
@@ -276,7 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04E056042839FC3600D9481F /* FlexiCalcTests.swift in Sources */,
+				04E056042839FC3600D9481F /* MathEquationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
