@@ -9,9 +9,25 @@ import Foundation
 
 struct CalculatorEngine {
 
+    // MARK: - Operand Side
+
+    enum OperandSide {
+        case leftHandSide
+        case rightHandSide
+    }
+
+    // MARK: - Math Equation
+
+    private var mathEquation = MathEquation(leftHandValue: .zero)
+    private var operandSide = OperandSide.leftHandSide
+
+    // MARK: - LCDDisplay
+
+    var lcdDisplayText = ""
+
     // MARK: - ExtraFunctions
 
-    func clearPressed() {}
+     func clearPressed() {}
 
     func negatePressed() {}
 
@@ -19,21 +35,46 @@ struct CalculatorEngine {
 
     // MARK: - Operations
 
-    func addPressed() {}
-
-    func minusPressed() {}
-
-    func multiplyPressed() {}
-
-    func dividePressed() {
-
+    mutating func addPressed() {
+        mathEquation.operation = .add
+        operandSide = .rightHandSide
     }
 
-    func equalPressed() {}
+    mutating func minusPressed() {
+        mathEquation.operation = .minus
+        operandSide = .rightHandSide
+    }
+
+    mutating func multiplyPressed() {
+        mathEquation.operation = .multiply
+        operandSide = .rightHandSide
+    }
+
+    mutating func dividePressed() {
+        mathEquation.operation = .divide
+        operandSide = .rightHandSide
+    }
+
+    mutating func equalPressed() {
+        mathEquation.execute()
+        lcdDisplayText = mathEquation.result?.formatted() ?? "Error"
+    }
 
     // MARK: - Number Input
 
-    func decimalPressed() {}
+    func decimalPressed() {
 
-    func numberPressed(_ number: Int) {}
+    }
+
+    mutating func numberPressed(_ number: Int) {
+        let decimalValue = Decimal(number)
+        lcdDisplayText = decimalValue.formatted()
+
+        switch operandSide {
+            case .leftHandSide:
+                mathEquation.leftHandValue = decimalValue
+            case .rightHandSide:
+                mathEquation.rightHandValue = decimalValue
+        }
+    }
 }

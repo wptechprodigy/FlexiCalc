@@ -140,46 +140,62 @@ class FlexiCalcViewController: UIViewController {
 
     @IBAction private func clearPressed() {
         calculatorEngine.clearPressed()
+        refreshLCDDisplay()
     }
 
     @IBAction private func negatePressed() {
         calculatorEngine.negatePressed()
+        refreshLCDDisplay()
     }
 
     @IBAction private func percentagePressed() {
         calculatorEngine.percentagePressed()
+        refreshLCDDisplay()
     }
 
     // MARK: - Operations
 
     @IBAction private func addPressed() {
         calculatorEngine.addPressed()
+        refreshLCDDisplay()
     }
 
     @IBAction private func minusPressed() {
         calculatorEngine.minusPressed()
+        refreshLCDDisplay()
     }
 
     @IBAction private func multiplyPressed() {
         calculatorEngine.multiplyPressed()
+        refreshLCDDisplay()
     }
 
     @IBAction private func dividePressed() {
         calculatorEngine.dividePressed()
+        refreshLCDDisplay()
     }
 
     @IBAction private func equalPressed() {
         calculatorEngine.equalPressed()
+        refreshLCDDisplay()
     }
 
     // MARK: - Number Input
 
     @IBAction private func decimalPressed() {
         calculatorEngine.decimalPressed()
+        refreshLCDDisplay()
     }
 
     @IBAction private func numberPressed(_ sender: UIButton) {
         let number = sender.tag
         calculatorEngine.numberPressed(number)
+        refreshLCDDisplay()
+    }
+
+    // MARK: - Refresh LCDDisplay
+
+    private func refreshLCDDisplay() {
+        displayLabel.text = calculatorEngine.lcdDisplayText
     }
 }

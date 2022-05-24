@@ -13,7 +13,7 @@ struct MathEquation {
 
     enum OperationType {
         case add
-        case subtract
+        case minus
         case multiply
         case divide
     }
@@ -38,7 +38,7 @@ struct MathEquation {
         switch operation {
             case .add:
                 result = leftHandValue + rightHandValue
-            case .subtract:
+            case .minus:
                 result = leftHandValue - rightHandValue
             case .multiply:
                 result = leftHandValue * rightHandValue
