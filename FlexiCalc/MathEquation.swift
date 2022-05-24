@@ -10,6 +10,7 @@ import Foundation
 struct MathEquation {
 
     // MARK: - OperationType
+
     enum OperationType {
         case add
         case subtract
@@ -18,12 +19,14 @@ struct MathEquation {
     }
 
     // MARK: - Properties: examining a specie of math 4 + 4 = 8
+
     var leftHandValue: Decimal
     var rightHandValue: Decimal?
     var operation: OperationType?
     var result: Decimal?
 
     // MARK: - Methods
+    
     mutating func execute() {
 
         guard

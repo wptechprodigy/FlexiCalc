@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		04E055ED2839FC3100D9481F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E055EC2839FC3100D9481F /* AppDelegate.swift */; };
 		04E055EF2839FC3100D9481F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E055EE2839FC3100D9481F /* SceneDelegate.swift */; };
-		04E055F12839FC3100D9481F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E055F02839FC3100D9481F /* ViewController.swift */; };
+		04E055F12839FC3100D9481F /* FlexiCalcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E055F02839FC3100D9481F /* FlexiCalcViewController.swift */; };
 		04E055F42839FC3100D9481F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E055F22839FC3100D9481F /* Main.storyboard */; };
 		04E055F62839FC3500D9481F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04E055F52839FC3500D9481F /* Assets.xcassets */; };
 		04E055F92839FC3500D9481F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E055F72839FC3500D9481F /* LaunchScreen.storyboard */; };
@@ -19,6 +19,7 @@
 		04E0561D283B814400D9481F /* CalculatorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E0561C283B814400D9481F /* CalculatorTheme.swift */; };
 		04E0561F283B828F00D9481F /* UIColor+HexValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E0561E283B828F00D9481F /* UIColor+HexValue.swift */; };
 		04E05621283CC69200D9481F /* MathEquation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E05620283CC69200D9481F /* MathEquation.swift */; };
+		04E05623283CD39B00D9481F /* CalculatorEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E05622283CD39B00D9481F /* CalculatorEngine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +43,7 @@
 		04E055E92839FC3100D9481F /* FlexiCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlexiCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E055EC2839FC3100D9481F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04E055EE2839FC3100D9481F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		04E055F02839FC3100D9481F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		04E055F02839FC3100D9481F /* FlexiCalcViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexiCalcViewController.swift; sourceTree = "<group>"; };
 		04E055F32839FC3100D9481F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04E055F52839FC3500D9481F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04E055F82839FC3500D9481F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,6 +56,7 @@
 		04E0561C283B814400D9481F /* CalculatorTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTheme.swift; sourceTree = "<group>"; };
 		04E0561E283B828F00D9481F /* UIColor+HexValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HexValue.swift"; sourceTree = "<group>"; };
 		04E05620283CC69200D9481F /* MathEquation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathEquation.swift; sourceTree = "<group>"; };
+		04E05622283CD39B00D9481F /* CalculatorEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorEngine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,9 +109,10 @@
 			children = (
 				04E055EC2839FC3100D9481F /* AppDelegate.swift */,
 				04E055EE2839FC3100D9481F /* SceneDelegate.swift */,
-				04E055F02839FC3100D9481F /* ViewController.swift */,
+				04E055F02839FC3100D9481F /* FlexiCalcViewController.swift */,
 				04E0561C283B814400D9481F /* CalculatorTheme.swift */,
 				04E0561E283B828F00D9481F /* UIColor+HexValue.swift */,
+				04E05622283CD39B00D9481F /* CalculatorEngine.swift */,
 				04E05620283CC69200D9481F /* MathEquation.swift */,
 				04E055F22839FC3100D9481F /* Main.storyboard */,
 				04E055F52839FC3500D9481F /* Assets.xcassets */,
@@ -269,9 +272,10 @@
 			files = (
 				04E0561F283B828F00D9481F /* UIColor+HexValue.swift in Sources */,
 				04E05621283CC69200D9481F /* MathEquation.swift in Sources */,
-				04E055F12839FC3100D9481F /* ViewController.swift in Sources */,
+				04E055F12839FC3100D9481F /* FlexiCalcViewController.swift in Sources */,
 				04E0561D283B814400D9481F /* CalculatorTheme.swift in Sources */,
 				04E055ED2839FC3100D9481F /* AppDelegate.swift in Sources */,
+				04E05623283CD39B00D9481F /* CalculatorEngine.swift in Sources */,
 				04E055EF2839FC3100D9481F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
