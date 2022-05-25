@@ -25,7 +25,7 @@ struct MathEquation {
     var operation: OperationType?
     var result: Decimal?
 
-    // MARK: - Methods
+    // MARK: - Execution
     
     mutating func execute() {
 
@@ -45,5 +45,15 @@ struct MathEquation {
             case .divide:
                 result = leftHandValue / rightHandValue
         }
+    }
+
+    // MARK: - Negate
+
+    mutating func negateLeftHandValue() {
+        leftHandValue.negate()
+    }
+
+    mutating func negateRightHandValue() {
+        rightHandValue?.negate()
     }
 }

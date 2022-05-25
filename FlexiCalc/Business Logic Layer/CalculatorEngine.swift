@@ -36,10 +36,10 @@ struct CalculatorEngine {
     mutating func negatePressed() {
         switch operandSide {
             case .leftHandSide:
-                mathEquation.leftHandValue.negate()
+                mathEquation.negateLeftHandValue()
                 lcdDisplayText = mathEquation.leftHandValue.formatted()
             case .rightHandSide:
-                mathEquation.rightHandValue?.negate()
+                mathEquation.negateRightHandValue()
                 lcdDisplayText = mathEquation.rightHandValue?.formatted() ?? "Error"
         }
     }
