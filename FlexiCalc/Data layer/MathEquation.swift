@@ -56,4 +56,25 @@ struct MathEquation {
     mutating func negateRightHandValue() {
         rightHandValue?.negate()
     }
+
+    // MARK: - Percentage
+
+    mutating func applyPercentageToLeftHandValue() {
+        leftHandValue = calculatePercentageValue(leftHandValue)
+    }
+
+    mutating func applyPercentageToRightHandValue() {
+        guard let decimalValue = rightHandValue else { return }
+        rightHandValue = calculatePercentageValue(decimalValue)
+    }
+
+    private func calculatePercentageValue(
+        _ decimal: Decimal) -> Decimal {
+            // Making decimal an optional will amount to below:
+            // guard let decimal = decimal else { return .nan }
+            // Going this route might not be so intelligent
+            // since we are performing math, we shouldn't be in a
+            // situation were we had to deal with `NAN`.
+            return decimal / 100
+        }
 }
