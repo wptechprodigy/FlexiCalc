@@ -21,6 +21,10 @@ struct CalculatorEngine {
     private var mathEquation = MathEquation(leftHandValue: .zero)
     private var operandSide = OperandSide.leftHandSide
 
+    // MARK: - Equation History
+
+    private var historyLog: [MathEquation] = []
+
     // MARK: - LCDDisplay
 
     var lcdDisplayText = ""
@@ -79,6 +83,7 @@ struct CalculatorEngine {
 
     mutating func equalPressed() {
         mathEquation.execute()
+        historyLog.append(mathEquation)
         printEquationToDebugConsole()
         mathEquation.leftHandValue = mathEquation.result ?? .zero
         operandSide = .rightHandSide
@@ -107,5 +112,11 @@ struct CalculatorEngine {
 
     private func printEquationToDebugConsole() {
         print("Equation: " + mathEquation.printOutEquation())
+    }
+
+    // MARK: - History Log
+
+    private mutating func clearHistory() {
+        historyLog = []
     }
 }
