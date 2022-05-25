@@ -18,7 +18,7 @@ struct MathEquation {
         case divide
     }
 
-    // MARK: - Properties: examining a specie of math 4 + 4 = 8
+    // MARK: - Properties: examining a specie of math say 4 + 4 = 8
 
     var leftHandValue: Decimal
     var rightHandValue: Decimal?

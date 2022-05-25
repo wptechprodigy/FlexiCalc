@@ -27,7 +27,11 @@ struct CalculatorEngine {
 
     // MARK: - ExtraFunctions
 
-     func clearPressed() {}
+     mutating func clearPressed() {
+         mathEquation = MathEquation(leftHandValue: .zero)
+         lcdDisplayText = mathEquation.leftHandValue.formatted()
+         operandSide = .leftHandSide
+     }
 
     func negatePressed() {}
 
