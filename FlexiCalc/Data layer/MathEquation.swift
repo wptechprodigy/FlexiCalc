@@ -77,4 +77,29 @@ struct MathEquation {
             // situation were we had to deal with `NAN`.
             return decimal / 100
         }
+
+    // MARK: - String Representation
+
+    func printOutEquation() -> String {
+        // 5 + 7 = 12
+        let operationSymbol = generateStringRepresentationOfOperation()
+
+        return leftHandValue.formatted()
+                    + " "
+                    + operationSymbol
+                    + " "
+                    + (rightHandValue?.formatted() ?? "")
+                    + " = "
+                    + (result?.formatted() ?? "")
+    }
+
+    private func generateStringRepresentationOfOperation() -> String {
+        switch operation {
+            case .add: return "+"
+            case .minus: return "-"
+            case .multiply: return "*"
+            case .divide: return "÷"
+            case .none: return ""
+        }
+    }
 }
