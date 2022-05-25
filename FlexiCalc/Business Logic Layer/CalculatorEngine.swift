@@ -70,6 +70,8 @@ struct CalculatorEngine {
 
     mutating func equalPressed() {
         mathEquation.execute()
+        mathEquation.leftHandValue = mathEquation.result ?? .zero
+        operandSide = .rightHandSide
         lcdDisplayText = mathEquation.result?.formatted() ?? "Error"
     }
 
