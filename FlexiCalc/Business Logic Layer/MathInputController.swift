@@ -113,7 +113,8 @@ struct MathInputController {
         toPreviousInput previousNumber: Decimal
     ) -> (newNumber: Decimal, newLcdDisplayText: String) {
         let stringInput = String(number)
-        var newStringRepresentation = previousNumber.isZero ? "" : lcdDisplayText
+        let emptyInput = ""
+        var newStringRepresentation = previousNumber.isZero ? emptyInput : lcdDisplayText
         newStringRepresentation.append(stringInput)
 
         let formatter = NumberFormatter()
