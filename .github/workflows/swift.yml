@@ -14,7 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Force Xcode 13
-      run: /usr/bin/xcrun --sdk macosx --show-sdk-platform-path/Applications/Xcode_13.2.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -print-target-info
+      run: sudo xcode-select -switch /Applications/Xcode_13.2.1.app
     - name: Build
       run: swift build -v
     - name: Run tests
