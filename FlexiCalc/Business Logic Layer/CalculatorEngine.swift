@@ -79,7 +79,7 @@ struct CalculatorEngine {
 
     mutating func equalPressed() {
         mathEquation.execute()
-        print(mathEquation.printOutEquation())
+        printEquationToDebugConsole()
         mathEquation.leftHandValue = mathEquation.result ?? .zero
         operandSide = .rightHandSide
         lcdDisplayText = mathEquation.result?.formatted() ?? "Error"
@@ -101,5 +101,11 @@ struct CalculatorEngine {
             case .rightHandSide:
                 mathEquation.rightHandValue = decimalValue
         }
+    }
+
+    // MARK: - Debug Console
+
+    private func printEquationToDebugConsole() {
+        print("Equation: " + mathEquation.printOutEquation())
     }
 }
