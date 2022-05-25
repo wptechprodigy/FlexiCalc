@@ -176,7 +176,7 @@ class FlexiCalcViewController: UIViewController {
     }
 
     @IBAction private func equalPressed() {
-        calculatorEngine.equalPressed()
+        calculatorEngine.equalsPressed()
         refreshLCDDisplay()
     }
 

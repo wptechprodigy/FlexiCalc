@@ -18,6 +18,7 @@
 		04E05623283CD39B00D9481F /* CalculatorEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E05622283CD39B00D9481F /* CalculatorEngine.swift */; };
 		04E0563B283E411000D9481F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E05638283E3FFB00D9481F /* Main.storyboard */; };
 		04E0563C283E411000D9481F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E05637283E3FFB00D9481F /* LaunchScreen.storyboard */; };
+		04E07A8C283E97B50008F6BD /* MathInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E07A8B283E97B50008F6BD /* MathInputController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		04E05622283CD39B00D9481F /* CalculatorEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorEngine.swift; sourceTree = "<group>"; };
 		04E05637283E3FFB00D9481F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04E05638283E3FFB00D9481F /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		04E07A8B283E97B50008F6BD /* MathInputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathInputController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				04E05622283CD39B00D9481F /* CalculatorEngine.swift */,
+				04E07A8B283E97B50008F6BD /* MathInputController.swift */,
 			);
 			path = "Business Logic Layer";
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 			files = (
 				04E0561F283B828F00D9481F /* UIColor+HexValue.swift in Sources */,
 				04E05621283CC69200D9481F /* MathEquation.swift in Sources */,
+				04E07A8C283E97B50008F6BD /* MathInputController.swift in Sources */,
 				04E055F12839FC3100D9481F /* FlexiCalcViewController.swift in Sources */,
 				04E0561D283B814400D9481F /* CalculatorTheme.swift in Sources */,
 				04E055ED2839FC3100D9481F /* AppDelegate.swift in Sources */,
