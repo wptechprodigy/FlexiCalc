@@ -20,11 +20,13 @@ struct MathInputController {
 
     // MARK: - Constants
 
-    let groupingSymbol = Locale.current.groupingSeparator ?? ","
+    private let groupingSymbol = Locale.current.groupingSeparator ?? ","
+    private let decimalSymbol = Locale.current.decimalSeparator ?? "."
 
     // MARK: - Math Equation
 
     private(set) var mathEquation = MathEquation(leftHandValue: .zero)
+    private var isEnteringDecimal = false
 
     // MARK: - LCDDisplay
 
@@ -64,35 +66,49 @@ struct MathInputController {
 
     mutating func addPressed() {
         mathEquation.operation = .add
-        operandSide = .rightHandSide
+        startEditingRightHandValue()
     }
 
     mutating func minusPressed() {
         mathEquation.operation = .minus
-        operandSide = .rightHandSide
+        startEditingRightHandValue()
     }
 
     mutating func multiplyPressed() {
         mathEquation.operation = .multiply
-        operandSide = .rightHandSide
+        startEditingRightHandValue()
     }
 
     mutating func dividePressed() {
         mathEquation.operation = .divide
-        operandSide = .rightHandSide
+        startEditingRightHandValue()
     }
 
     mutating func execute() {
         mathEquation.execute()
-        mathEquation.leftHandValue = mathEquation.result ?? .zero
-        operandSide = .rightHandSide
         lcdDisplayText = formatLCDDisplay(mathEquation.result)
+    }
+
+    // MARK: - Editing Right Hand Side
+
+    private mutating func startEditingRightHandValue() {
+        operandSide = .rightHandSide
+        isEnteringDecimal = false
     }
 
     // MARK: - Number Input
 
     mutating func decimalPressed() {
+        isEnteringDecimal = true
+        lcdDisplayText = appendDecimalPointIfNeeded(lcdDisplayText)
+    }
 
+    private func appendDecimalPointIfNeeded(_ string: String) -> String {
+        if string.contains(decimalSymbol) {
+            return string
+        }
+
+        return string.appending(decimalSymbol)
     }
 
     mutating func numberPressed(_ number: Int) {
@@ -116,12 +132,16 @@ struct MathInputController {
         _ number: Int,
         toPreviousInput previousNumber: Decimal
     ) -> (newNumber: Decimal, newLcdDisplayText: String) {
+        guard isEnteringDecimal == false else {
+            return appendNewDecimalNumber(number)
+        }
+
         let stringInput = String(number)
         let emptyInput = ""
         var newStringRepresentation = previousNumber.isZero ? emptyInput : lcdDisplayText
         newStringRepresentation.append(stringInput)
 
-        newStringRepresentation = newStringRepresentation.replacingOccurrences(of: groupingSymbol, with: "")
+        newStringRepresentation = newStringRepresentation.replacingOccurrences(of: groupingSymbol, with: emptyInput)
 
         let formatter = NumberFormatter()
         formatter.generatesDecimalNumbers = true
@@ -133,6 +153,23 @@ struct MathInputController {
         let newNumber = convertedNumber.decimalValue
         let newLcdDisplayText = formatLCDDisplay(newNumber)
         return (newNumber, newLcdDisplayText)
+    }
+
+    private func appendNewDecimalNumber(_ number: Int) -> (
+        newNumber: Decimal,
+        newLcdDisplayText: String) {
+            let stringInput = String(number)
+            let newLCDDisplayText = lcdDisplayText.appending(stringInput)
+
+            let formatter = NumberFormatter()
+            formatter.generatesDecimalNumbers = true
+            formatter.numberStyle = .decimal
+            guard let convertedNumber = formatter.number(from: newLCDDisplayText) else {
+                return (.nan, "Error")
+            }
+
+            let newNumber = convertedNumber.decimalValue
+            return (newNumber, newLCDDisplayText)
     }
 
     // MARK: - LCD Display Formatting
