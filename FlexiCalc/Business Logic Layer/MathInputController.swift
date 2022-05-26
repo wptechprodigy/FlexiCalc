@@ -23,6 +23,7 @@ struct MathInputController {
     private let groupingSymbol = Locale.current.groupingSeparator ?? ","
     private let decimalSymbol = Locale.current.decimalSeparator ?? "."
     private let minusSymbol = "-"
+    private let errorMessage = "Error"
 
     // MARK: - Math Equation
 
@@ -173,7 +174,7 @@ struct MathInputController {
         formatter.generatesDecimalNumbers = true
         formatter.numberStyle = .decimal
         guard let convertedNumber = formatter.number(from: newStringRepresentation) else {
-            return (.nan, "Error")
+            return (.nan, errorMessage)
         }
 
         let newNumber = convertedNumber.decimalValue
@@ -191,7 +192,7 @@ struct MathInputController {
             formatter.generatesDecimalNumbers = true
             formatter.numberStyle = .decimal
             guard let convertedNumber = formatter.number(from: newLCDDisplayText) else {
-                return (.nan, "Error")
+                return (.nan, errorMessage)
             }
 
             let newNumber = convertedNumber.decimalValue
@@ -201,8 +202,11 @@ struct MathInputController {
     // MARK: - LCD Display Formatting
 
     private func formatLCDDisplay(_ decimal: Decimal?) -> String {
-        guard let decimal = decimal else {
-            return "Error"
+        guard
+            let decimal = decimal,
+            decimal.isNaN == false
+        else {
+            return errorMessage
         }
 
         return decimal.formatted()
