@@ -26,6 +26,10 @@ struct MathEquation {
     var result: Decimal?
 
     // MARK: - Execution
+
+    var isExecuted: Bool {
+        return result != nil
+    }
     
     mutating func execute() {
 
@@ -68,8 +72,7 @@ struct MathEquation {
         rightHandValue = calculatePercentageValue(decimalValue)
     }
 
-    private func calculatePercentageValue(
-        _ decimal: Decimal) -> Decimal {
+    private func calculatePercentageValue(_ decimal: Decimal) -> Decimal {
             // Making decimal an optional will amount to below:
             // guard let decimal = decimal else { return .nan }
             // Going this route might not be so intelligent

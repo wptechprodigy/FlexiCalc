@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04D882A02840335300E6DA35 /* String+Prefix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8829F2840335300E6DA35 /* String+Prefix.swift */; };
 		04E055ED2839FC3100D9481F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E055EC2839FC3100D9481F /* AppDelegate.swift */; };
 		04E055EF2839FC3100D9481F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E055EE2839FC3100D9481F /* SceneDelegate.swift */; };
 		04E055F12839FC3100D9481F /* FlexiCalcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E055F02839FC3100D9481F /* FlexiCalcViewController.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04D8829F2840335300E6DA35 /* String+Prefix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Prefix.swift"; sourceTree = "<group>"; };
 		04E055E92839FC3100D9481F /* FlexiCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlexiCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E055EC2839FC3100D9481F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04E055EE2839FC3100D9481F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +84,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04D882A1284034A200E6DA35 /* Swift Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				04D8829F2840335300E6DA35 /* String+Prefix.swift */,
+			);
+			path = "Swift Extensions";
+			sourceTree = "<group>";
+		};
 		04E055E02839FC3100D9481F = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +136,7 @@
 			children = (
 				04E055EC2839FC3100D9481F /* AppDelegate.swift */,
 				04E055EE2839FC3100D9481F /* SceneDelegate.swift */,
+				04D882A1284034A200E6DA35 /* Swift Extensions */,
 				04E05625283E383D00D9481F /* UIKit Extensions */,
 				04E05627283E388200D9481F /* UIViewControllers */,
 				04E05626283E387100D9481F /* Storyboards */,
@@ -311,6 +322,7 @@
 				04E05621283CC69200D9481F /* MathEquation.swift in Sources */,
 				04E07A8C283E97B50008F6BD /* MathInputController.swift in Sources */,
 				04E055F12839FC3100D9481F /* FlexiCalcViewController.swift in Sources */,
+				04D882A02840335300E6DA35 /* String+Prefix.swift in Sources */,
 				04E0561D283B814400D9481F /* CalculatorTheme.swift in Sources */,
 				04E055ED2839FC3100D9481F /* AppDelegate.swift in Sources */,
 				04E05623283CD39B00D9481F /* CalculatorEngine.swift in Sources */,

@@ -22,6 +22,7 @@ struct MathInputController {
 
     private let groupingSymbol = Locale.current.groupingSeparator ?? ","
     private let decimalSymbol = Locale.current.decimalSeparator ?? "."
+    private let minusSymbol = "-"
 
     // MARK: - Math Equation
 
@@ -41,17 +42,32 @@ struct MathInputController {
     // MARK: - Extra Functions
 
     mutating func negatePressed() {
+        guard isCompleted == false else { return }
+
         switch operandSide {
             case .leftHandSide:
                 mathEquation.negateLeftHandValue()
-                lcdDisplayText = formatLCDDisplay(mathEquation.leftHandValue)
+                displayNegateSymbolOnDisplay(mathEquation.leftHandValue)
             case .rightHandSide:
                 mathEquation.negateRightHandValue()
-                lcdDisplayText = formatLCDDisplay(mathEquation.rightHandValue)
+                displayNegateSymbolOnDisplay(mathEquation.rightHandValue)
+        }
+    }
+
+    private mutating func displayNegateSymbolOnDisplay(_ decimal: Decimal?) {
+        guard let decimal = decimal else { return }
+
+        let isNegativeValue = decimal < 0 ? true : false
+        if isNegativeValue {
+            lcdDisplayText.addPrefixIfNeeded(minusSymbol)
+        } else {
+            lcdDisplayText.removePrefixIfNeeded(minusSymbol)
         }
     }
 
     mutating func percentagePressed() {
+        guard isCompleted == false else { return }
+        
         switch operandSide {
             case .leftHandSide:
                 mathEquation.applyPercentageToLeftHandValue()
@@ -65,26 +81,36 @@ struct MathInputController {
     // MARK: - Operations
 
     mutating func addPressed() {
+        guard isCompleted == false else { return }
+
         mathEquation.operation = .add
         startEditingRightHandValue()
     }
 
     mutating func minusPressed() {
+        guard isCompleted == false else { return }
+
         mathEquation.operation = .minus
         startEditingRightHandValue()
     }
 
     mutating func multiplyPressed() {
+        guard isCompleted == false else { return }
+
         mathEquation.operation = .multiply
         startEditingRightHandValue()
     }
 
     mutating func dividePressed() {
+        guard isCompleted == false else { return }
+
         mathEquation.operation = .divide
         startEditingRightHandValue()
     }
 
     mutating func execute() {
+        guard isCompleted == false else { return }
+
         mathEquation.execute()
         lcdDisplayText = formatLCDDisplay(mathEquation.result)
     }
@@ -180,5 +206,11 @@ struct MathInputController {
         }
 
         return decimal.formatted()
+    }
+
+    // MARK: - Computed Properties
+
+    var isCompleted: Bool {
+        return mathEquation.isExecuted
     }
 }
