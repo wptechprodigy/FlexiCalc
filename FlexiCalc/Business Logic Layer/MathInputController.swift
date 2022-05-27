@@ -164,11 +164,10 @@ struct MathInputController {
         }
 
         let stringInput = String(number)
-        let emptyInput = ""
-        var newStringRepresentation = previousNumber.isZero ? emptyInput : lcdDisplayText
+        var newStringRepresentation = previousNumber.isZero ? "" : lcdDisplayText
         newStringRepresentation.append(stringInput)
 
-        newStringRepresentation = newStringRepresentation.replacingOccurrences(of: groupingSymbol, with: emptyInput)
+        newStringRepresentation = newStringRepresentation.replacingOccurrences(of: groupingSymbol, with: "")
 
         let formatter = NumberFormatter()
         formatter.generatesDecimalNumbers = true
