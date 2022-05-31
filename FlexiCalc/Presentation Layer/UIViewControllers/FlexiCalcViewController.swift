@@ -40,7 +40,7 @@ class FlexiCalcViewController: UIViewController {
     // MARK: - Color Themes
 
     private var currentTheme: CalculatorTheme {
-        return electroTheme
+        return bloodOrangeTheme
     }
 
     // MARK: - Calculator Engine
@@ -61,7 +61,16 @@ class FlexiCalcViewController: UIViewController {
         lcdDisplay.backgroundColor = .clear
         displayLabel.textColor = UIColor(hex: currentTheme.displayColor)
 
+        setNeedsStatusBarAppearanceUpdate()
+
         decorateButtons()
+    }
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        switch currentTheme.statusBarStyle {
+            case .light: return .lightContent
+            case .dark: return .darkContent
+        }
     }
 
     private func decorateButtons() {

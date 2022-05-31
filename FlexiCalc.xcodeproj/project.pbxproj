@@ -112,6 +112,23 @@
 			path = "Swift Extensions";
 			sourceTree = "<group>";
 		};
+		04D882C92845F9AA00E6DA35 /* Color Themes */ = {
+			isa = PBXGroup;
+			children = (
+				04D882B52845F07400E6DA35 /* bloodOrangeTheme.swift */,
+				04D882B72845F10200E6DA35 /* purpleTheme.swift */,
+				04D882B92845F18F00E6DA35 /* darkTheme.swift */,
+				04D882BB2845F37600E6DA35 /* darkBlueTheme.swift */,
+				04D882BD2845F47A00E6DA35 /* electroTheme.swift */,
+				04D882BF2845F52700E6DA35 /* lightBlueTheme.swift */,
+				04D882C12845F5A300E6DA35 /* lightTheme.swift */,
+				04D882C32845F77500E6DA35 /* orangeTheme.swift */,
+				04D882C52845F86C00E6DA35 /* pinkTheme.swift */,
+				04D882C72845F8E100E6DA35 /* washedOutTheme.swift */,
+			);
+			path = "Color Themes";
+			sourceTree = "<group>";
+		};
 		04E055E02839FC3100D9481F = {
 			isa = PBXGroup;
 			children = (
@@ -203,16 +220,7 @@
 			children = (
 				04E0561C283B814400D9481F /* CalculatorTheme.swift */,
 				04E05620283CC69200D9481F /* MathEquation.swift */,
-				04D882B52845F07400E6DA35 /* bloodOrangeTheme.swift */,
-				04D882B72845F10200E6DA35 /* purpleTheme.swift */,
-				04D882B92845F18F00E6DA35 /* darkTheme.swift */,
-				04D882BB2845F37600E6DA35 /* darkBlueTheme.swift */,
-				04D882BD2845F47A00E6DA35 /* electroTheme.swift */,
-				04D882BF2845F52700E6DA35 /* lightBlueTheme.swift */,
-				04D882C12845F5A300E6DA35 /* lightTheme.swift */,
-				04D882C32845F77500E6DA35 /* orangeTheme.swift */,
-				04D882C52845F86C00E6DA35 /* pinkTheme.swift */,
-				04D882C72845F8E100E6DA35 /* washedOutTheme.swift */,
+				04D882C92845F9AA00E6DA35 /* Color Themes */,
 			);
 			path = "Data layer";
 			sourceTree = "<group>";

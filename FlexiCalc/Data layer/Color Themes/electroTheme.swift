@@ -21,7 +21,9 @@ extension FlexiCalcViewController {
             operationTitleColor:            "#14145C",
 
             pinpadColor:                    "#14145C",
-            pinpadTitleColor:               "#ffffff"
+            pinpadTitleColor:               "#ffffff",
+
+            statusBarStyle:                 .light
         )
     }
 }
