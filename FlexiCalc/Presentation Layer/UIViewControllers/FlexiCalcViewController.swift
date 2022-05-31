@@ -39,16 +39,8 @@ class FlexiCalcViewController: UIViewController {
 
     // MARK: - Color Themes
 
-    var currentTheme: CalculatorTheme {
-        return CalculatorTheme(
-            backgroundColor: "#000000",
-            displayColor: "#ffffff",
-            extraFunctionColor: "#a6a6a6",
-            extraFunctionTitleColor: "#ffffff",
-            operationColor: "#ff9f0a",
-            operationTitleColor: "#ffffff",
-            pinpadColor: "#333333",
-            pinpadTitleColor: "#ffffff")
+    private var currentTheme: CalculatorTheme {
+        return electroTheme
     }
 
     // MARK: - Calculator Engine
