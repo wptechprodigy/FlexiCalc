@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension FlexiCalcViewController {
+extension ThemeManager {
 
     var purpleTheme: CalculatorTheme {
         return CalculatorTheme(

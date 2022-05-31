@@ -18,6 +18,7 @@
 		04D882C42845F77500E6DA35 /* orangeTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D882C32845F77500E6DA35 /* orangeTheme.swift */; };
 		04D882C62845F86C00E6DA35 /* pinkTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D882C52845F86C00E6DA35 /* pinkTheme.swift */; };
 		04D882C82845F8E100E6DA35 /* washedOutTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D882C72845F8E100E6DA35 /* washedOutTheme.swift */; };
+		04D882CB284609D200E6DA35 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D882CA284609D200E6DA35 /* ThemeManager.swift */; };
 		04E055ED2839FC3100D9481F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E055EC2839FC3100D9481F /* AppDelegate.swift */; };
 		04E055EF2839FC3100D9481F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E055EE2839FC3100D9481F /* SceneDelegate.swift */; };
 		04E055F12839FC3100D9481F /* FlexiCalcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E055F02839FC3100D9481F /* FlexiCalcViewController.swift */; };
@@ -61,6 +62,7 @@
 		04D882C32845F77500E6DA35 /* orangeTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = orangeTheme.swift; sourceTree = "<group>"; };
 		04D882C52845F86C00E6DA35 /* pinkTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pinkTheme.swift; sourceTree = "<group>"; };
 		04D882C72845F8E100E6DA35 /* washedOutTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = washedOutTheme.swift; sourceTree = "<group>"; };
+		04D882CA284609D200E6DA35 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		04E055E92839FC3100D9481F /* FlexiCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlexiCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E055EC2839FC3100D9481F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04E055EE2839FC3100D9481F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,14 +118,14 @@
 			isa = PBXGroup;
 			children = (
 				04D882B52845F07400E6DA35 /* bloodOrangeTheme.swift */,
-				04D882B72845F10200E6DA35 /* purpleTheme.swift */,
-				04D882B92845F18F00E6DA35 /* darkTheme.swift */,
 				04D882BB2845F37600E6DA35 /* darkBlueTheme.swift */,
+				04D882B92845F18F00E6DA35 /* darkTheme.swift */,
 				04D882BD2845F47A00E6DA35 /* electroTheme.swift */,
 				04D882BF2845F52700E6DA35 /* lightBlueTheme.swift */,
 				04D882C12845F5A300E6DA35 /* lightTheme.swift */,
 				04D882C32845F77500E6DA35 /* orangeTheme.swift */,
 				04D882C52845F86C00E6DA35 /* pinkTheme.swift */,
+				04D882B72845F10200E6DA35 /* purpleTheme.swift */,
 				04D882C72845F8E100E6DA35 /* washedOutTheme.swift */,
 			);
 			path = "Color Themes";
@@ -211,6 +213,7 @@
 			children = (
 				04E05622283CD39B00D9481F /* CalculatorEngine.swift */,
 				04E07A8B283E97B50008F6BD /* MathInputController.swift */,
+				04D882CA284609D200E6DA35 /* ThemeManager.swift */,
 			);
 			path = "Business Logic Layer";
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				04D882B62845F07400E6DA35 /* bloodOrangeTheme.swift in Sources */,
 				04D882C62845F86C00E6DA35 /* pinkTheme.swift in Sources */,
 				04E07A8C283E97B50008F6BD /* MathInputController.swift in Sources */,
+				04D882CB284609D200E6DA35 /* ThemeManager.swift in Sources */,
 				04E055F12839FC3100D9481F /* FlexiCalcViewController.swift in Sources */,
 				04D882C22845F5A300E6DA35 /* lightTheme.swift in Sources */,
 				04D882A02840335300E6DA35 /* String+Prefix.swift in Sources */,

@@ -40,7 +40,7 @@ class FlexiCalcViewController: UIViewController {
     // MARK: - Color Themes
 
     private var currentTheme: CalculatorTheme {
-        return bloodOrangeTheme
+        return ThemeManager.shared.currentTheme
     }
 
     // MARK: - Calculator Engine
@@ -51,12 +51,32 @@ class FlexiCalcViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        decorateView()
+        addThemeGestureRecogniser()
+        redecorateView()
+    }
+
+    // MARK: - Gestures
+
+    private func addThemeGestureRecogniser() {
+        let themeGestureRecogniser = UITapGestureRecognizer(
+            target: self,
+            action: #selector(themeGestureRecogniserDidTap(_:)))
+        themeGestureRecogniser.numberOfTapsRequired = 2
+        lcdDisplay.addGestureRecognizer(themeGestureRecogniser)
+    }
+
+    @objc private func themeGestureRecogniserDidTap(_ gesture: UITapGestureRecognizer) {
+        decorateViewWithNextTheme()
     }
 
     // MARK: - Decorate
 
-    private func decorateView() {
+    private func decorateViewWithNextTheme() {
+        ThemeManager.shared.moveToNextTheme()
+        redecorateView()
+    }
+
+    private func redecorateView() {
         view.backgroundColor = UIColor(hex: currentTheme.backgroundColor)
         lcdDisplay.backgroundColor = .clear
         displayLabel.textColor = UIColor(hex: currentTheme.displayColor)
@@ -111,7 +131,7 @@ class FlexiCalcViewController: UIViewController {
         button.tintColor = UIColor(hex: currentTheme.extraFunctionColor)
         button.setTitleColor(UIColor(hex: currentTheme.extraFunctionTitleColor),
                              for: .normal)
-        setFontSize(of: button, to: 35)
+        setFontSize(of: button, to: 30)
     }
 
     private func decorateOperationButton(_ button: UIButton) {
@@ -124,8 +144,8 @@ class FlexiCalcViewController: UIViewController {
     }
 
     private func decoratePinpadButton(_ button: UIButton,
-                                      _ usingSilcedImage: Bool = false) { 
-        decorateButton(button, usingSilcedImage )
+                                      _ usingSlicedImage: Bool = false) { 
+        decorateButton(button, usingSlicedImage )
 
         button.tintColor = UIColor(hex: currentTheme.pinpadColor)
         button.setTitleColor(UIColor(hex: currentTheme.pinpadTitleColor),
