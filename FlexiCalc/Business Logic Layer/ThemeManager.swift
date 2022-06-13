@@ -30,6 +30,7 @@ class ThemeManager {
 
     init() {
         populateArrayOfThemes()
+        restoreSavedThemeIndex()
     }
 
     private func populateArrayOfThemes() {
@@ -47,6 +48,21 @@ class ThemeManager {
         ]
     }
 
+    // MARK: - Save & Restore Theme Index
+
+    private func restoreSavedThemeIndex() {
+        if let previousThemeIndex = UserDefaults.standard
+            .object(forKey: "com.waheedcodes.FlexiCalc.ThemeManager.ThemeIndex") as? Int {
+            savedThemeIndex = previousThemeIndex
+        }
+
+        savedTheme = themes[savedThemeIndex]
+    }
+
+    private func saveThemeIndexToDisk() {
+        UserDefaults.standard.set(savedThemeIndex, forKey: "com.waheedcodes.FlexiCalc.ThemeManager.ThemeIndex")
+    }
+
     // MARK: - Next Theme
 
     func moveToNextTheme() {
@@ -57,5 +73,6 @@ class ThemeManager {
         }
 
         savedTheme = themes[savedThemeIndex]
+        saveThemeIndexToDisk()
     }
 }
