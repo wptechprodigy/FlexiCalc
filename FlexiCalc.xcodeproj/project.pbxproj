@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0436343228579BCC000E260D /* DataStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0436343128579BCC000E260D /* DataStorageManager.swift */; };
 		04D882A02840335300E6DA35 /* String+Prefix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8829F2840335300E6DA35 /* String+Prefix.swift */; };
 		04D882B62845F07400E6DA35 /* bloodOrangeTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D882B52845F07400E6DA35 /* bloodOrangeTheme.swift */; };
 		04D882B82845F10200E6DA35 /* purpleTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D882B72845F10200E6DA35 /* purpleTheme.swift */; };
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0436343128579BCC000E260D /* DataStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorageManager.swift; sourceTree = "<group>"; };
 		04D8829F2840335300E6DA35 /* String+Prefix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Prefix.swift"; sourceTree = "<group>"; };
 		04D882B52845F07400E6DA35 /* bloodOrangeTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bloodOrangeTheme.swift; sourceTree = "<group>"; };
 		04D882B72845F10200E6DA35 /* purpleTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = purpleTheme.swift; sourceTree = "<group>"; };
@@ -106,6 +108,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0436343028579B8F000E260D /* Data Storage Layer */ = {
+			isa = PBXGroup;
+			children = (
+				0436343128579BCC000E260D /* DataStorageManager.swift */,
+			);
+			path = "Data Storage Layer";
+			sourceTree = "<group>";
+		};
 		04D882A1284034A200E6DA35 /* Swift Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +165,7 @@
 			children = (
 				04E05624283E362C00D9481F /* Presentation Layer */,
 				04E05628283E38A600D9481F /* Business Logic Layer */,
+				0436343028579B8F000E260D /* Data Storage Layer */,
 				04E05629283E38D800D9481F /* Data layer */,
 				04E055F52839FC3500D9481F /* Assets.xcassets */,
 				04E055FA2839FC3500D9481F /* Info.plist */,
@@ -366,6 +377,7 @@
 				04D882B62845F07400E6DA35 /* bloodOrangeTheme.swift in Sources */,
 				04D882C62845F86C00E6DA35 /* pinkTheme.swift in Sources */,
 				04E07A8C283E97B50008F6BD /* MathInputController.swift in Sources */,
+				0436343228579BCC000E260D /* DataStorageManager.swift in Sources */,
 				04D882CB284609D200E6DA35 /* ThemeManager.swift in Sources */,
 				04E055F12839FC3100D9481F /* FlexiCalcViewController.swift in Sources */,
 				04D882C22845F5A300E6DA35 /* lightTheme.swift in Sources */,

@@ -13,6 +13,11 @@ class ThemeManager {
 
     static let shared = ThemeManager()
 
+    // MARK: - Data Storage
+
+    private let key = "com.waheedcodes.FlexiCalc.ThemeManager.ThemeIndex"
+    private lazy var dataStore = DataStorageManager(key: key)
+
     // MARK: - Themes
 
     private(set) var themes: [CalculatorTheme] = []
@@ -51,8 +56,7 @@ class ThemeManager {
     // MARK: - Save & Restore Theme Index
 
     private func restoreSavedThemeIndex() {
-        if let previousThemeIndex = UserDefaults.standard
-            .object(forKey: "com.waheedcodes.FlexiCalc.ThemeManager.ThemeIndex") as? Int {
+        if let previousThemeIndex = dataStore.getValue() as? Int {
             savedThemeIndex = previousThemeIndex
         }
 
@@ -60,7 +64,7 @@ class ThemeManager {
     }
 
     private func saveThemeIndexToDisk() {
-        UserDefaults.standard.set(savedThemeIndex, forKey: "com.waheedcodes.FlexiCalc.ThemeManager.ThemeIndex")
+        dataStore.set(savedThemeIndex)
     }
 
     // MARK: - Next Theme
