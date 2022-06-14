@@ -35,7 +35,7 @@ class ThemeManager {
 
     init() {
         populateArrayOfThemes()
-        restoreSavedThemeIndex()
+        restoreSavedTheme()
     }
 
     private func populateArrayOfThemes() {
@@ -55,28 +55,60 @@ class ThemeManager {
 
     // MARK: - Save & Restore Theme Index
 
-    private func restoreSavedThemeIndex() {
-        if let previousThemeIndex = dataStore.getValue() as? Int {
-            savedThemeIndex = previousThemeIndex
+    private func restoreSavedTheme() {
+        guard let encodedTheme = dataStore.getValue() as? Data
+        else {
+            return
         }
 
-        savedTheme = themes[savedThemeIndex]
+        let decoder = JSONDecoder()
+        if let previousTheme = try? decoder
+            .decode(
+                CalculatorTheme.self,
+                from: encodedTheme
+            ) {
+            savedTheme = previousTheme
+        }
     }
 
-    private func saveThemeIndexToDisk() {
-        dataStore.set(savedThemeIndex)
+    private func saveThemeToDisk(_ theme: CalculatorTheme) {
+        let encoder = JSONEncoder()
+        if let encodedTheme = try? encoder.encode(theme) {
+            dataStore.set(encodedTheme)
+        }
     }
 
     // MARK: - Next Theme
 
     func moveToNextTheme() {
 
-        savedThemeIndex = savedThemeIndex + 1
-        if savedThemeIndex > themes.count - 1 {
-            savedThemeIndex = 0
+        // Index of saved theme
+        let currentThemeId = currentTheme.id
+        let currentThemeIndex = themes.firstIndex { calculatorTheme in
+            calculatorTheme.id == currentThemeId
         }
 
-        savedTheme = themes[savedThemeIndex]
-        saveThemeIndexToDisk()
+        // reset the theme if something has gone wrong
+        guard let indexOfExistingTheme = currentThemeIndex else {
+            if let firstTheme = themes.first {
+                updateSystemThemeWith(firstTheme)
+            }
+            return
+        }
+
+        // Move to the next theme
+        var nextThemeIndex = indexOfExistingTheme + 1
+        if nextThemeIndex > themes.count - 1 {
+            nextThemeIndex = 0
+        }
+
+        // Set the next theme
+        let nextTheme = themes[nextThemeIndex]
+        updateSystemThemeWith(nextTheme)
+    }
+
+    private func updateSystemThemeWith(_ theme: CalculatorTheme) {
+        savedTheme = theme
+        saveThemeToDisk(theme)
     }
 }

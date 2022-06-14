@@ -11,6 +11,7 @@ extension ThemeManager {
     
     var bloodOrangeTheme: CalculatorTheme {
         return CalculatorTheme(
+            id:                             1,
             backgroundColor:                "#4A1D41",
             displayColor:                   "#ffffff",
 
