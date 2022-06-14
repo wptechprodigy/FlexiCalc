@@ -11,20 +11,23 @@ extension ThemeManager {
 
     var darkTheme: CalculatorTheme {
         return CalculatorTheme(
-            id:                             3,
-            backgroundColor:                "#000000",
-            displayColor:                   "#ffffff",
+            id:                                     3,
+            backgroundColor:                        "#000000",
+            displayColor:                           "#ffffff",
 
-            extraFunctionColor:             "#a6a6a6",
-            extraFunctionTitleColor:        "#ffffff",
+            extraFunctionColor:                     "#a6a6a6",
+            extraFunctionTitleColor:                "#ffffff",
 
-            operationColor:                 "#ff9f0a",
-            operationTitleColor:            "#ffffff",
+            operationColor:                         "#ff9f0a",
+            operationTitleColor:                    "#ffffff",
+            operationSelectedColor:                 "#FFFFFF",
+            operationTitleSelectedColor:            "#ff9f0a",
+            
 
-            pinpadColor:                    "#333333",
-            pinpadTitleColor:               "#ffffff",
+            pinpadColor:                            "#333333",
+            pinpadTitleColor:                       "#ffffff",
 
-            statusBarStyle:                 .light
+            statusBarStyle:                         .light
         )
     }
 }

@@ -140,6 +140,8 @@ class FlexiCalcViewController: UIViewController {
         button.tintColor = UIColor(hex: currentTheme.operationColor)
         button.setTitleColor(UIColor(hex: currentTheme.operationTitleColor),
                              for: .normal)
+        button.setTitleColor(UIColor(hex: currentTheme.operationTitleSelectedColor),
+                             for: .selected)
         setFontSize(of: button, to: 45)
     }
 
@@ -174,24 +176,50 @@ class FlexiCalcViewController: UIViewController {
         refreshLCDDisplay()
     }
 
+    // MARK: - Select Operations
+
+    private func deselectOperationButton() {
+        [divideButton, multiplyButton, addButton, minusButton].forEach {
+            selectOperationButton($0, selected: false)
+        }
+
+    }
+
+    private func selectOperationButton(_ button: UIButton, selected: Bool) {
+        button.tintColor = selected ? UIColor(hex: currentTheme.operationSelectedColor) : UIColor(hex: currentTheme.operationColor)
+        button.isSelected = selected
+    }
+
     // MARK: - Operations
 
     @IBAction private func addPressed() {
+        deselectOperationButton()
+        selectOperationButton(addButton, selected: true)
+
         calculatorEngine.addPressed()
         refreshLCDDisplay()
     }
 
     @IBAction private func minusPressed() {
+        deselectOperationButton()
+        selectOperationButton(minusButton, selected: true)
+
         calculatorEngine.minusPressed()
         refreshLCDDisplay()
     }
 
     @IBAction private func multiplyPressed() {
+        deselectOperationButton()
+        selectOperationButton(multiplyButton, selected: true)
+
         calculatorEngine.multiplyPressed()
         refreshLCDDisplay()
     }
 
     @IBAction private func dividePressed() {
+        deselectOperationButton()
+        selectOperationButton(divideButton, selected: true)
+
         calculatorEngine.dividePressed()
         refreshLCDDisplay()
     }
@@ -204,11 +232,15 @@ class FlexiCalcViewController: UIViewController {
     // MARK: - Number Input
 
     @IBAction private func decimalPressed() {
+        deselectOperationButton()
+
         calculatorEngine.decimalPressed()
         refreshLCDDisplay()
     }
 
     @IBAction private func numberPressed(_ sender: UIButton) {
+        deselectOperationButton()
+        
         let number = sender.tag
         calculatorEngine.numberPressed(number)
         refreshLCDDisplay()

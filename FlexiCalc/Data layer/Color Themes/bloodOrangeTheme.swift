@@ -11,20 +11,22 @@ extension ThemeManager {
     
     var bloodOrangeTheme: CalculatorTheme {
         return CalculatorTheme(
-            id:                             1,
-            backgroundColor:                "#4A1D41",
-            displayColor:                   "#ffffff",
+            id:                                     1,
+            backgroundColor:                        "#4A1D41",
+            displayColor:                           "#ffffff",
 
-            extraFunctionColor:             "#9C3766",
-            extraFunctionTitleColor:        "#ffffff",
+            extraFunctionColor:                     "#9C3766",
+            extraFunctionTitleColor:                "#ffffff",
 
-            operationColor:                 "#8D3362",
-            operationTitleColor:            "#ffffff",
+            operationColor:                         "#8D3362",
+            operationTitleColor:                    "#ffffff",
+            operationSelectedColor:                 "#ffffff",
+            operationTitleSelectedColor:            "#8D3362",
 
-            pinpadColor:                    "#C64661",
-            pinpadTitleColor:               "#ffffff",
+            pinpadColor:                            "#C64661",
+            pinpadTitleColor:                       "#ffffff",
 
-            statusBarStyle:                 .light
+            statusBarStyle:                         .light
         )
     }
 }
