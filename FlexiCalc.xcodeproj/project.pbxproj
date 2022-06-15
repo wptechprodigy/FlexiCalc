@@ -20,6 +20,7 @@
 		04D882C62845F86C00E6DA35 /* pinkTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D882C52845F86C00E6DA35 /* pinkTheme.swift */; };
 		04D882C82845F8E100E6DA35 /* washedOutTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D882C72845F8E100E6DA35 /* washedOutTheme.swift */; };
 		04D882CB284609D200E6DA35 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D882CA284609D200E6DA35 /* ThemeManager.swift */; };
+		04DEB1EF2859E3C00092DF85 /* LCDDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DEB1EE2859E3C00092DF85 /* LCDDisplay.swift */; };
 		04E055ED2839FC3100D9481F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E055EC2839FC3100D9481F /* AppDelegate.swift */; };
 		04E055EF2839FC3100D9481F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E055EE2839FC3100D9481F /* SceneDelegate.swift */; };
 		04E055F12839FC3100D9481F /* FlexiCalcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E055F02839FC3100D9481F /* FlexiCalcViewController.swift */; };
@@ -65,6 +66,7 @@
 		04D882C52845F86C00E6DA35 /* pinkTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pinkTheme.swift; sourceTree = "<group>"; };
 		04D882C72845F8E100E6DA35 /* washedOutTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = washedOutTheme.swift; sourceTree = "<group>"; };
 		04D882CA284609D200E6DA35 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		04DEB1EE2859E3C00092DF85 /* LCDDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCDDisplay.swift; sourceTree = "<group>"; };
 		04E055E92839FC3100D9481F /* FlexiCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlexiCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E055EC2839FC3100D9481F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04E055EE2839FC3100D9481F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +143,14 @@
 			path = "Color Themes";
 			sourceTree = "<group>";
 		};
+		04DEB1F02859E6A50092DF85 /* UIKit Subclasses */ = {
+			isa = PBXGroup;
+			children = (
+				04DEB1EE2859E3C00092DF85 /* LCDDisplay.swift */,
+			);
+			path = "UIKit Subclasses";
+			sourceTree = "<group>";
+		};
 		04E055E02839FC3100D9481F = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +196,7 @@
 			children = (
 				04E055EC2839FC3100D9481F /* AppDelegate.swift */,
 				04E055EE2839FC3100D9481F /* SceneDelegate.swift */,
+				04DEB1F02859E6A50092DF85 /* UIKit Subclasses */,
 				04D882A1284034A200E6DA35 /* Swift Extensions */,
 				04E05625283E383D00D9481F /* UIKit Extensions */,
 				04E05627283E388200D9481F /* UIViewControllers */,
@@ -370,6 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04DEB1EF2859E3C00092DF85 /* LCDDisplay.swift in Sources */,
 				04D882BE2845F47A00E6DA35 /* electroTheme.swift in Sources */,
 				04D882C42845F77500E6DA35 /* orangeTheme.swift in Sources */,
 				04E0561F283B828F00D9481F /* UIColor+HexValue.swift in Sources */,
