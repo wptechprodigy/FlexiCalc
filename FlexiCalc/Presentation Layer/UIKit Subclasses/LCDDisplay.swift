@@ -56,11 +56,38 @@ class LCDDisplay: UIView {
         }
     }
 
-    private func showMenu(from gesture: UILongPressGestureRecognizer) {
+    // MARK: - UIMenuController
+
+    private func showMenu(from gestureRecognizer: UILongPressGestureRecognizer) {
+
+        becomeFirstResponder()
+
         let menu = UIMenuController.shared
         guard menu.isMenuVisible == false else { return }
 
-        // Show the menu
-        print("Show menu...")
+        let locationOfTouch = gestureRecognizer.location(in: self)
+        var rect = bounds
+        rect.origin = locationOfTouch
+        rect.origin.y = rect.origin.y - 20
+        rect.size = CGSize(width: 1, height: 44)
+        menu.showMenu(from: self, rect: rect)
+    }
+
+    override var canBecomeFirstResponder: Bool {
+        true
+    }
+
+    override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        return
+            action == #selector(UIResponderStandardEditActions.copy(_:)) ||
+            action == #selector(UIResponderStandardEditActions.paste(_:))
+    }
+
+    override func copy(_ sender: Any?) {
+        print("Copy just pressed")
+    }
+
+    override func paste(_ sender: Any?) {
+        print("Paste just pressed")
     }
 }

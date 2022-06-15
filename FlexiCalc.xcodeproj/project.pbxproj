@@ -21,6 +21,7 @@
 		04D882C82845F8E100E6DA35 /* washedOutTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D882C72845F8E100E6DA35 /* washedOutTheme.swift */; };
 		04D882CB284609D200E6DA35 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D882CA284609D200E6DA35 /* ThemeManager.swift */; };
 		04DEB1EF2859E3C00092DF85 /* LCDDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DEB1EE2859E3C00092DF85 /* LCDDisplay.swift */; };
+		04DEB1F2285A27C10092DF85 /* String+Numbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DEB1F1285A27C10092DF85 /* String+Numbers.swift */; };
 		04E055ED2839FC3100D9481F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E055EC2839FC3100D9481F /* AppDelegate.swift */; };
 		04E055EF2839FC3100D9481F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E055EE2839FC3100D9481F /* SceneDelegate.swift */; };
 		04E055F12839FC3100D9481F /* FlexiCalcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E055F02839FC3100D9481F /* FlexiCalcViewController.swift */; };
@@ -67,6 +68,7 @@
 		04D882C72845F8E100E6DA35 /* washedOutTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = washedOutTheme.swift; sourceTree = "<group>"; };
 		04D882CA284609D200E6DA35 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		04DEB1EE2859E3C00092DF85 /* LCDDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCDDisplay.swift; sourceTree = "<group>"; };
+		04DEB1F1285A27C10092DF85 /* String+Numbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Numbers.swift"; sourceTree = "<group>"; };
 		04E055E92839FC3100D9481F /* FlexiCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlexiCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E055EC2839FC3100D9481F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04E055EE2839FC3100D9481F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				04D8829F2840335300E6DA35 /* String+Prefix.swift */,
+				04DEB1F1285A27C10092DF85 /* String+Numbers.swift */,
 			);
 			path = "Swift Extensions";
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				04D882B62845F07400E6DA35 /* bloodOrangeTheme.swift in Sources */,
 				04D882C62845F86C00E6DA35 /* pinkTheme.swift in Sources */,
 				04E07A8C283E97B50008F6BD /* MathInputController.swift in Sources */,
+				04DEB1F2285A27C10092DF85 /* String+Numbers.swift in Sources */,
 				0436343228579BCC000E260D /* DataStorageManager.swift in Sources */,
 				04D882CB284609D200E6DA35 /* ThemeManager.swift in Sources */,
 				04E055F12839FC3100D9481F /* FlexiCalcViewController.swift in Sources */,
