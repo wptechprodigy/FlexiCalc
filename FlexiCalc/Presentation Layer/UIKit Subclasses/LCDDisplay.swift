@@ -8,6 +8,7 @@
 //
 // → What's This File?
 //   It's a subclass. This is our label to display input and the results of equations.
+//
 //   Architectural Layer: Presentation Layer
 //
 // *******************************************************************************************
@@ -33,6 +34,33 @@ class LCDDisplay: UIView {
     }
 
     private func sharedInit() {
+        addMenuGestureRecognizer()
+    }
 
+    // MARK: - Gesture Recognizer
+
+    private func addMenuGestureRecognizer() {
+        let longPressGesture = UILongPressGestureRecognizer(
+            target: self,
+            action: #selector(longPressGestureEventFired(_:))
+        )
+        addGestureRecognizer(longPressGesture)
+    }
+
+    @objc private func longPressGestureEventFired(_ gesture: UILongPressGestureRecognizer) {
+        switch gesture.state {
+            case .began:
+                showMenu(from: gesture)
+            default:
+                break
+        }
+    }
+
+    private func showMenu(from gesture: UILongPressGestureRecognizer) {
+        let menu = UIMenuController.shared
+        guard menu.isMenuVisible == false else { return }
+
+        // Show the menu
+        print("Show menu...")
     }
 }

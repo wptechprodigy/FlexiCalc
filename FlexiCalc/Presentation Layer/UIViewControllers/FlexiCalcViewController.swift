@@ -4,6 +4,14 @@
 //
 //  Created by waheedCodes on 22/05/2022.
 //
+// *******************************************************************************************
+//
+// → What's This File?
+//   It's a subclass. This is our FlexiCalc ViewController to display the calcualtor UI.
+//
+//   Architectural Layer: Presentation Layer
+//
+// *******************************************************************************************
 
 import UIKit
 
