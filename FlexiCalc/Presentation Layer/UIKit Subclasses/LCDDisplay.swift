@@ -84,10 +84,12 @@ class LCDDisplay: UIView {
     }
 
     override func copy(_ sender: Any?) {
-        print("Copy just pressed")
+        UIPasteboard.general.string = label.text
     }
 
     override func paste(_ sender: Any?) {
-        print("Paste just pressed")
+        let stringFromPasteboard = UIPasteboard.general.string
+        let doubleValueFromPasteboard = stringFromPasteboard?.doubleValue
+        // TODO: - inform calculator system of number 👉🏽 doubleValueFromPasteboard
     }
 }
