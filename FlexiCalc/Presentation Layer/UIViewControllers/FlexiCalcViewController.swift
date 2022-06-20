@@ -74,6 +74,7 @@ class FlexiCalcViewController: UIViewController {
     }
 
     @objc private func themeGestureRecogniserDidTap(_ gesture: UITapGestureRecognizer) {
+        lcdDisplay.prepareForColorThemeUpdate()
         decorateViewWithNextTheme()
     }
 
