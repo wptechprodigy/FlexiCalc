@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0436343228579BCC000E260D /* DataStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0436343128579BCC000E260D /* DataStorageManager.swift */; };
+		049799A928607E1800D1246D /* UIButton+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049799A828607E1800D1246D /* UIButton+Animations.swift */; };
 		04D882A02840335300E6DA35 /* String+Prefix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8829F2840335300E6DA35 /* String+Prefix.swift */; };
 		04D882B62845F07400E6DA35 /* bloodOrangeTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D882B52845F07400E6DA35 /* bloodOrangeTheme.swift */; };
 		04D882B82845F10200E6DA35 /* purpleTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D882B72845F10200E6DA35 /* purpleTheme.swift */; };
@@ -55,6 +56,7 @@
 
 /* Begin PBXFileReference section */
 		0436343128579BCC000E260D /* DataStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorageManager.swift; sourceTree = "<group>"; };
+		049799A828607E1800D1246D /* UIButton+Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Animations.swift"; sourceTree = "<group>"; };
 		04D8829F2840335300E6DA35 /* String+Prefix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Prefix.swift"; sourceTree = "<group>"; };
 		04D882B52845F07400E6DA35 /* bloodOrangeTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bloodOrangeTheme.swift; sourceTree = "<group>"; };
 		04D882B72845F10200E6DA35 /* purpleTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = purpleTheme.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				04E0561E283B828F00D9481F /* UIColor+HexValue.swift */,
+				049799A828607E1800D1246D /* UIButton+Animations.swift */,
 			);
 			path = "UIKit Extensions";
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 				0436343228579BCC000E260D /* DataStorageManager.swift in Sources */,
 				04D882CB284609D200E6DA35 /* ThemeManager.swift in Sources */,
 				04E055F12839FC3100D9481F /* FlexiCalcViewController.swift in Sources */,
+				049799A928607E1800D1246D /* UIButton+Animations.swift in Sources */,
 				04D882C22845F5A300E6DA35 /* lightTheme.swift in Sources */,
 				04D882A02840335300E6DA35 /* String+Prefix.swift in Sources */,
 				04D882BC2845F37600E6DA35 /* darkBlueTheme.swift in Sources */,

@@ -171,16 +171,22 @@ class FlexiCalcViewController: UIViewController {
     // MARK: - IBActions
 
     @IBAction private func clearPressed() {
+        clearButton.bounce()
+
         calculatorEngine.clearPressed()
         refreshLCDDisplay()
     }
 
     @IBAction private func negatePressed() {
+        negateButton.bounce()
+
         calculatorEngine.negatePressed()
         refreshLCDDisplay()
     }
 
     @IBAction private func percentagePressed() {
+        percentageButton.bounce()
+
         calculatorEngine.percentagePressed()
         refreshLCDDisplay()
     }
@@ -202,6 +208,8 @@ class FlexiCalcViewController: UIViewController {
     // MARK: - Operations
 
     @IBAction private func addPressed() {
+        addButton.bounce()
+
         deselectOperationButton()
         selectOperationButton(addButton, selected: true)
 
@@ -210,6 +218,8 @@ class FlexiCalcViewController: UIViewController {
     }
 
     @IBAction private func minusPressed() {
+        minusButton.bounce()
+
         deselectOperationButton()
         selectOperationButton(minusButton, selected: true)
 
@@ -218,6 +228,8 @@ class FlexiCalcViewController: UIViewController {
     }
 
     @IBAction private func multiplyPressed() {
+        multiplyButton.bounce()
+
         deselectOperationButton()
         selectOperationButton(multiplyButton, selected: true)
 
@@ -226,6 +238,8 @@ class FlexiCalcViewController: UIViewController {
     }
 
     @IBAction private func dividePressed() {
+        divideButton.bounce()
+
         deselectOperationButton()
         selectOperationButton(divideButton, selected: true)
 
@@ -234,6 +248,8 @@ class FlexiCalcViewController: UIViewController {
     }
 
     @IBAction private func equalPressed() {
+        equalButton.bounce()
+
         calculatorEngine.equalsPressed()
         refreshLCDDisplay()
     }
@@ -241,6 +257,8 @@ class FlexiCalcViewController: UIViewController {
     // MARK: - Number Input
 
     @IBAction private func decimalPressed() {
+        decimalButton.bounce()
+
         deselectOperationButton()
 
         calculatorEngine.decimalPressed()
@@ -248,6 +266,8 @@ class FlexiCalcViewController: UIViewController {
     }
 
     @IBAction private func numberPressed(_ sender: UIButton) {
+        sender.bounce()
+        
         deselectOperationButton()
         
         let number = sender.tag
