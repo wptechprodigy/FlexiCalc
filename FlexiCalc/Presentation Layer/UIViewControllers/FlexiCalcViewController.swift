@@ -60,6 +60,7 @@ class FlexiCalcViewController: UIViewController {
         super.viewDidLoad()
         addThemeGestureRecogniser()
         redecorateView()
+        registerForNotifications()
     }
 
     // MARK: - Gestures
@@ -257,5 +258,26 @@ class FlexiCalcViewController: UIViewController {
 
     private func refreshLCDDisplay() {
         lcdDisplay.label.text = calculatorEngine.lcdDisplayText
+    }
+
+    // MARK: - Notifications
+
+    private func registerForNotifications() {
+        // Register
+        let notificationName = Notification.Name("com.waheedcodes.FlexiCalc.LCDDisplay.pasteNumber")
+        NotificationCenter.default.addObserver(self, selector: #selector(didReceivePasteNotification(notification:)), name: notificationName, object: nil)
+    }
+
+    @objc private func didReceivePasteNotification(notification: Notification) {
+        guard let doubleValue = notification.userInfo?["PasteKey"] as? Double else { return }
+
+        pasteNumberIntoCalculator(from: Decimal(doubleValue))
+    }
+
+    // MARK: - Copy & Paste
+
+    private func pasteNumberIntoCalculator(from decimal: Decimal) {
+        calculatorEngine.pasteInNumber(from: decimal)
+        refreshLCDDisplay()
     }
 }

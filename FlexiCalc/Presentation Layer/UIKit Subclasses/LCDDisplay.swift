@@ -88,8 +88,11 @@ class LCDDisplay: UIView {
     }
 
     override func paste(_ sender: Any?) {
-        let stringFromPasteboard = UIPasteboard.general.string
-        let doubleValueFromPasteboard = stringFromPasteboard?.doubleValue
-        // TODO: - inform calculator system of number 👉🏽 doubleValueFromPasteboard
+        guard let numberToPaste = UIPasteboard.general.string?.doubleValue else { return }
+
+        let pasteNumberNotification = Notification.Name("com.waheedcodes.FlexiCalc.LCDDisplay.pasteNumber")
+        let userInfo: [AnyHashable: Any] = ["PasteKey": numberToPaste]
+        NotificationCenter.default.post(
+            name: pasteNumberNotification, object: nil, userInfo: userInfo)
     }
 }
