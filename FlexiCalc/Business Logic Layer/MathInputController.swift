@@ -226,7 +226,8 @@ struct MathInputController {
             case .rightHandSide:
                 mathEquation.rightHandValue = decimal
         }
-
+        
+        // update LCD Display text
         lcdDisplayText = formatLCDDisplay(decimal)
     }
 }
