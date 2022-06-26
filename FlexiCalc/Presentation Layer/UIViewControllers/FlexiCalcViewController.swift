@@ -286,7 +286,11 @@ class FlexiCalcViewController: UIViewController {
     private func registerForNotifications() {
         // Register
         let notificationName = Notification.Name("com.waheedcodes.FlexiCalc.LCDDisplay.pasteNumber")
-        NotificationCenter.default.addObserver(self, selector: #selector(didReceivePasteNotification(notification:)), name: notificationName, object: nil)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(didReceivePasteNotification(notification:)),
+            name: notificationName,
+            object: nil)
     }
 
     @objc private func didReceivePasteNotification(notification: Notification) {

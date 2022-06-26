@@ -36,8 +36,8 @@ struct MathEquation {
         guard
             let rightHandValue = self.rightHandValue,
             let operation = self.operation else {
-                return
-            }
+            return
+        }
 
         switch operation {
             case .add:
@@ -73,13 +73,13 @@ struct MathEquation {
     }
 
     private func calculatePercentageValue(_ decimal: Decimal) -> Decimal {
-            // Making decimal an optional will amount to below:
-            // guard let decimal = decimal else { return .nan }
-            // Going this route might not be so intelligent
-            // since we are performing math, we shouldn't be in a
-            // situation were we had to deal with `NAN`.
-            return decimal / 100
-        }
+        // Making decimal an optional will amount to below:
+        // guard let decimal = decimal else { return .nan }
+        // Going this route might not be so intelligent
+        // since we are performing math, we shouldn't be in a
+        // situation were we had to deal with `NAN`.
+        return decimal / 100
+    }
 
     // MARK: - String Representation
 
@@ -88,12 +88,12 @@ struct MathEquation {
         let operationSymbol = generateStringRepresentationOfOperation()
 
         return leftHandValue.formatted()
-                    + " "
-                    + operationSymbol
-                    + " "
-                    + (rightHandValue?.formatted() ?? "")
-                    + " = "
-                    + (result?.formatted() ?? "")
+                                + " "
+                                + operationSymbol
+                                + " "
+                                + (rightHandValue?.formatted() ?? "")
+                                + " = "
+                                + (result?.formatted() ?? "")
     }
 
     private func generateStringRepresentationOfOperation() -> String {
