@@ -60,6 +60,7 @@ class LCDDisplay: UIView {
     // MARK: - UIMenuController
 
     private func showMenu(from gestureRecognizer: UILongPressGestureRecognizer) {
+        registerNotifications()
         highlightScreen()
         becomeFirstResponder()
 
@@ -76,7 +77,6 @@ class LCDDisplay: UIView {
 
     private func hideMenu() {
         UIMenuController.shared.hideMenu(from: self)
-        unhighlightScreen()
     }
 
     override var canBecomeFirstResponder: Bool {
@@ -130,5 +130,29 @@ class LCDDisplay: UIView {
         } completion: { _ in
 
         }
+    }
+
+    // MARK: - Notifications
+
+    private func registerNotifications() {
+        NotificationCenter.default
+            .addObserver(
+                self,
+                selector: #selector(willHideEditMenu(_:)),
+                name: UIMenuController.willHideMenuNotification,
+                object: nil)
+    }
+
+    private func unregisterNotifications() {
+        NotificationCenter.default
+            .removeObserver(
+                self,
+                name: UIMenuController.willHideMenuNotification,
+                object: nil)
+    }
+
+    @objc private func willHideEditMenu(_ notification: Notification) {
+        unhighlightScreen()
+        unregisterNotifications()
     }
 }
