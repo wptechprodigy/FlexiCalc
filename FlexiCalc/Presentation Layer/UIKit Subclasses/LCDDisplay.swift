@@ -34,6 +34,7 @@ class LCDDisplay: UIView {
     }
 
     private func sharedInit() {
+        layer.cornerRadius = 20
         addMenuGestureRecognizer()
     }
 
