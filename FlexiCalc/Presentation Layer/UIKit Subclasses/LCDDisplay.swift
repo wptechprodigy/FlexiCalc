@@ -105,6 +105,7 @@ class LCDDisplay: UIView {
     // MARK: - Color Theme
 
     func prepareForColorThemeUpdate() {
+        unhighlightScreen(animated: false)
         hideMenu()
     }
 
@@ -121,10 +122,11 @@ class LCDDisplay: UIView {
         }
     }
 
-    private func unhighlightScreen() {
+    private func unhighlightScreen(animated: Bool) {
         let theme = ThemeManager.shared.currentTheme
 
-        UIView.animate(withDuration: 0.15, delay: 0, options: .curveEaseInOut) { [weak self] in
+        let duration = animated ? 0.15 : 0
+        UIView.animate(withDuration: duration, delay: 0, options: .curveEaseInOut) { [weak self] in
             self?.backgroundColor = UIColor.clear
             self?.label.textColor = UIColor(hex: theme.displayColor)
         } completion: { _ in
@@ -152,7 +154,7 @@ class LCDDisplay: UIView {
     }
 
     @objc private func willHideEditMenu(_ notification: Notification) {
-        unhighlightScreen()
+        unhighlightScreen(animated: true)
         unregisterNotifications()
     }
 }
