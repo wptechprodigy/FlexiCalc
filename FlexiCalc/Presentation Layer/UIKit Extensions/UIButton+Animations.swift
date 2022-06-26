@@ -4,6 +4,15 @@
 //
 //  Created by waheedCodes on 20/06/2022.
 //
+// *******************************************************************************************
+//
+// → What's This File?
+//   It's an extension. Its adds more features to UIButton, such as animation.
+//   Architectural Layer: Presentation Layer
+//
+//   💡 Tip 👉🏽 Animations provide personality. They emotionally connect the product to the
+//   audience and give the app a certain feel. Adding animations is a great idea.
+// *******************************************************************************************
 
 import Foundation
 import UIKit
@@ -11,41 +20,13 @@ import UIKit
 extension UIButton {
 
     func bounce() {
-        moveUp()
-    }
-
-    private func growLarger() {
-        UIView.animate(withDuration: 1, delay: 0, options: .curveEaseIn) { [weak self] in
-            self?.transform = CGAffineTransform(scaleX: 4, y: 4)
+        UIView.animate(withDuration: 0.1, delay: 0, options: [.curveEaseOut]) { [weak self] in
+            self?.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
         } completion: { _ in
-
-        }
-    }
-
-    private func makeSmaller() {
-        UIView.animate(withDuration: 1, delay: 0, options: .curveEaseIn) { [weak self] in
-            self?.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
-        } completion: { _ in
-
-        }
-    }
-
-    private func moveUp() {
-        UIView.animate(withDuration: 0.1, delay: 0, options: [.curveEaseOut, .allowUserInteraction]) { [weak self] in
-            self?.transform = CGAffineTransform(translationX: 0, y: -50)
-        } completion: { _ in
-            UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseInOut) { [weak self] in
-                self?.transform = CGAffineTransform(translationX: 0, y: 5)
+            UIView.animate(withDuration: 0.15, delay: 0, options: [.curveEaseInOut]) { [weak self] in
+                self?.transform = CGAffineTransform.identity
             } completion: { _ in
-                UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseInOut) { [weak self] in
-                    self?.transform = CGAffineTransform(translationX: 0, y: -2)
-                } completion: { _ in
-                    UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseInOut) { [weak self] in
-                        self?.transform = CGAffineTransform(translationX: 0, y: 0)
-                    } completion: { _ in
 
-                    }
-                }
             }
         }
     }
